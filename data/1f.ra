@@ -1,0 +1,8 @@
+LOAD Advisor
+1f_1 <- SELECT Yrs_of_exp <= 4 FROM Advisor
+1f_2 <- SELECT Salary > 300000 FROM 1f_1
+1f <- PROJECT Adv_Id, Yrs_of_exp FROM 1f_2
+CLEAR Advisor
+CLEAR 1f_1
+CLEAR 1f_2
+PRINT 1f

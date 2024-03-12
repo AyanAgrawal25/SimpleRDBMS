@@ -1,0 +1,19 @@
+LOAD Marks
+LOAD Student
+4_J <- CROSS Student Marks
+4_S <- SELECT Student_Stud_Id == Marks_Stud_Id FROM 4_J
+4_M <- SELECT Maths_marks >= 70 FROM 4_S
+4_P <- SELECT Physics_marks > 60 FROM 4_M
+4_A1 <- SELECT Stud_age <= 18 FROM 4_P
+4_A2 <- SELECT Stud_age >= 16 FROM 4_A1
+1d <- PROJECT Student_Stud_Id, Maths_marks, Physics_marks, Stud_age FROM 4_A2
+RENAME Student_Stud_Id TO Stud_Id FROM 1d
+CLEAR Marks
+CLEAR Student
+CLEAR 4_J
+CLEAR 4_S
+CLEAR 4_M
+CLEAR 4_P
+CLEAR 4_A1
+CLEAR 4_A2
+PRINT 1d

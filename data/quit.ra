@@ -1,0 +1,3 @@
+LOAD Student
+PRINT Student
+QUIT

@@ -1,0 +1,16 @@
+LOAD Student
+LOAD Marks
+5_J <- CROSS Student Marks
+5_E <- SELECT Student_Stud_Id == Marks_Stud_Id FROM 5_J
+5_E1 <- SELECT Advisor_id == 2 FROM 5_E
+5_MM <- SELECT Maths_marks > 90 FROM 5_E1
+1h <- PROJECT Student_Stud_Id FROM 5_MM
+RENAME Student_Stud_Id TO Stud_Id FROM 1h
+CLEAR Student
+CLEAR Marks
+CLEAR 5_J
+CLEAR 5_E
+CLEAR 5_E1
+CLEAR 5_MM
+PRINT 1h
+

@@ -1,0 +1,6 @@
+LOAD Student
+1a_1 <- SELECT Stud_sex == 0 FROM Student
+1a <- PROJECT Stud_Id, Stud_age FROM 1a_1
+CLEAR Student
+CLEAR 1a_1
+PRINT 1a

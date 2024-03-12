@@ -1,0 +1,8 @@
+LOAD Student
+1b_1 <- SELECT Stud_sex == 1 FROM Student
+1b_2 <- SELECT Stud_age > 16 FROM 1b_1
+1b <- PROJECT Stud_Id, Stud_age FROM 1b_2
+CLEAR Student
+CLEAR 1b_1
+CLEAR 1b_2
+PRINT 1b
